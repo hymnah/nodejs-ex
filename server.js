@@ -10,6 +10,9 @@ var express = require('express'),
 
 Object.assign=require('object-assign');
 
+server.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP);
+
+
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 

@@ -8,9 +8,7 @@ var express = require('express'),
     io = require('socket.io').listen(server);
 
 
-Object.assign=require('object-assign');
-
-server.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP);
+Object.assign=require('object-assign')
 
 
 app.engine('html', require('ejs').renderFile);

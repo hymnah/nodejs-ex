@@ -4,9 +4,11 @@ var express = require('express'),
     app     = express(),
     eps     = require('ejs'),
     morgan  = require('morgan'),
-    http = require('http').Server(app),
-    io = require('socket.io')(http);
-    
+    server = require('http').createServer(app),
+    io = require('socket.io').listen(server);
+
+var socket = io.connect("http://samplenode-samplenode.44fs.preview.openshiftapps.com");
+
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);

@@ -3,7 +3,8 @@ var express = require('express'),
     fs      = require('fs'),
     app     = express(),
     eps     = require('ejs'),
-    morgan  = require('morgan');
+    morgan  = require('morgan'),
+    io = require('socket.io')(http);
     
 Object.assign=require('object-assign')
 
@@ -100,6 +101,30 @@ app.use(function(err, req, res, next){
 initDb(function(err){
   console.log('Error connecting to Mongo. Message:\n'+err);
 });
+
+
+//extra
+
+io.on('connection', function(socket){
+
+  console.log('a user connected');
+
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+
+  // socket.on('chat message', function(msg){
+  //   console.log('message: ' + msg);
+  // });
+
+   socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+
+});
+
+
+
 
 app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);

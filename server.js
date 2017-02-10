@@ -4,6 +4,7 @@ var express = require('express'),
     app     = express(),
     eps     = require('ejs'),
     morgan  = require('morgan'),
+    http = require('http').Server(app),
     io = require('socket.io')(http);
     
 Object.assign=require('object-assign')

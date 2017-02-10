@@ -23,7 +23,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
   <script>
-     var socket = io.connect("http://hymnah-samplenode.44fs.preview.openshiftapps.com/");
+     var socket = io.connect("http://hymnah-samplenode.44fs.preview.openshiftapps.com:8000/");
 
       $('form').submit(function(){
         socket.emit('chat message', $('#m').val());

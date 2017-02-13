@@ -23,7 +23,7 @@
   <script src="http://samplenode-samplenode.44fs.preview.openshiftapps.com:3001/socket.io/socket.io.min.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
   <script>
-     var socket = io.connect("http://samplenode-samplenode.44fs.preview.openshiftapps.com:3001");
+     var socket = io.connect("http://samplenode-samplenode.44fs.preview.openshiftapps.com");
 
       $('form').submit(function(){
         socket.emit('chat message', $('#m').val());

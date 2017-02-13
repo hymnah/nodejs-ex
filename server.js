@@ -129,7 +129,7 @@ io.on('connection', function(socket){
 
 
 
-app.listen(port, ip);
+server.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app ;
